@@ -1,0 +1,10 @@
+{
+  "organizations": [
+    "<organization-whose-forks-you-sync>"
+  ],
+  "exclude": [
+    "<your-user>/<fork-you-maintain-yourself>",
+    "<your-user>/linux-*",
+    "<organization-whose-forks-you-sync>/<fork-it-patches>"
+  ]
+}
