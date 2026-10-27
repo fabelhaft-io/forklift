@@ -12,7 +12,7 @@
 I like to fork any good repository I find - to keep it safe and protected should the original vanish.
 Since this leads to hundreds of repositories I needed an easy way to keep 'em up to date. 
 
-Together with https://github.com/fabelhaft-io/flotsam good ideas will never just vanish.
+Together with https://github.com/fabelhaft-io/flotsam good ideas will never just disappear.
 
 
 **Keep your GitHub forks up to date, all of them, with one command.**
