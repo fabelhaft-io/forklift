@@ -47,7 +47,7 @@ export FORKLIFT_TOKEN=github_pat_...
 
 forklift sync -dry-run              # show what would be synced, change nothing
 forklift sync                       # sync every fork you own
-forklift sync -c forklift.json      # also sync organization forks, skip excluded ones
+forklift sync -c forklift.json      # use a config file: organizations, include, exclude
 ```
 
 Each fork gets one line as soon as it is done:
@@ -100,18 +100,24 @@ and pass it with `-c`:
 ```json
 {
   "organizations": ["octo-org"],
-  "exclude": [
-    "octocat/my-patched-tool",
-    "octocat/linux-*",
-    "octo-org/vendored-*"
-  ]
+  "include": ["octocat/*", "octo-org/tool-*"],
+  "exclude": ["octocat/my-patched-tool"]
 }
 ```
 
+This syncs all of octocat's own forks except `my-patched-tool`, and the forks of octo-org
+whose names start with `tool-`. Every field is optional:
+
+| Field           | Without it                     | With it                                         |
+|-----------------|--------------------------------|-------------------------------------------------|
+| `organizations` | only your own forks are listed | the forks of these organizations are listed too |
+| `include`       | every listed fork is synced    | only listed forks that match a pattern          |
+| `exclude`       | no fork is left out            | matching forks are never synced                 |
+
 ### organizations
 
-Your own forks are always synced. Organization forks are only synced for the organizations
-listed here, because they are often maintained by other people, sometimes with changes of
+Your own forks are always listed. Organization forks are only listed for the organizations
+named here, because they are often maintained by other people, sometimes with changes of
 their own on purpose. Write the plain organization name, as it appears in
 `https://github.com/<name>`.
 

@@ -66,7 +66,7 @@ There is no `pkg/`: forklift is a command, not a library, so everything else sta
   no `git` and no SSH keys.
 - **Only the default branch.** That is what the "Sync fork" button does, and other branches
   of a fork are usually someone's own work.
-- **Organization forks are opt-in.** The user's own forks are always synced; an
+- **Organization forks are opt-in.** The user's own forks are always listed; an
   organization's forks only when the organization is listed in `organizations`. They are
   often maintained by other people on purpose, and a sync can't be undone.
 - **List everything before syncing anything.** All forks, the user's and every
